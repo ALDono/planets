@@ -1,0 +1,333 @@
+:root{
+
+    /* Custom Color Params */
+    --clr-white: rgb(255,255,255);
+    --clr-space: rgb(7,7,36);
+    --clr-dark-gray: rgb(56,56,79);
+    --clr-light-gray: rgb(131,131,131);
+    --clr-mercury: rgb(65,158,187);
+    --clr-venus:  rgb(237,162,73);
+    --clr-earth: rgb(109,46,213);
+    --clr-mars: rgb(209,76,50);
+    --clr-jupiter: rgb(216,58,52);
+    --clr-saturn: rgb(205,81,32);
+    --clr-uranus: rgb(30,193,162);
+    --clr-neptune: rgb(46,104,240);
+
+    /* Custom Font */
+    --ff-data: "Antonio", sans-serif;
+    --ff-content: "League Spartan", sans-serif;
+
+    /* Custom Font Sizes */
+    --fs-h1: 5rem;
+    --fs-h2: 2.5rem;
+    --fs-h3: 0.75rem;
+    --fs-h4: 0.688rem;
+    --fs-body: 0.875rem;
+
+    /* Custom Font Spacing */
+    --fsp-h2: -1.5;
+    --fsp-h3: 2.6;
+    --fsp-h4: 1;
+
+    /* Custom Line Height */
+    --lh-h1: 103px;
+    --lh-h2: 52px;
+    --lh-h3: 25px;
+    --lh-h4: 25px;
+    --lh-body: 25px;
+
+    /* Custom Font Weight */
+    --fw-reg: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+
+}
+
+/* CSS Reset - Used Andy Bells */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+margin-block-end: 0;
+margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+min-height: 100vh;
+text-rendering: optimizeSpeed;
+line-height: 1.5;
+margin: 0;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+max-width: 100%;
+display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+html:focus-within {
+  scroll-behavior: auto;
+}
+
+*,
+*::before,
+*::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+}
+
+/* End of CSS Reset */
+
+/* Utility Classes */
+
+body{
+    font-family: var(--ff-content);
+    font-weight: var(--fw-reg);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--clr-white);
+    background-color: var(--clr-space);
+    background-image: url(assets/background-stars.svg);
+    /* background-size: cover; */
+}
+
+h1{
+    font: var(--ff-data);
+    font-size: var(--fs-h1);
+    line-height: var(--lh-h1);
+    text-transform: uppercase;
+}
+
+h2{
+    font: var(--ff-data);
+    font-size: var(--fs-h2);
+    line-height: var(--lh-h2);
+    letter-spacing: var(--fsp-h2);
+    text-transform: uppercase;
+}
+
+h3{
+    font: var(--ff-content);
+    font-size: var(--fs-h3);
+    line-height: var(--lh-h3);
+    letter-spacing: var(--fsp-h3);
+}
+
+h4{
+    font: var(--ff-content);
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-h4);
+    letter-spacing: var(--fsp-h4);
+    text-transform: uppercase;
+    color: var(--clr-light-gray);
+}
+
+@media(min-width: 1100px){
+    .btn-desk{
+        display: block;
+        width: 350px;
+        height: 48px;
+        background: none;
+        border: 1px var(--clr-dark-gray) solid;
+        text-align: left;
+        text-transform: uppercase;
+        font-weight: var(--fw-bold);
+        letter-spacing: 2.57px;
+        color: var(--clr-white);
+    }
+
+    .btn-desk:hover{
+        background-color: var(--clr-dark-gray);
+    }
+
+    .btn-desk:active{
+        background-color: var(--clr-mercury);
+    }
+
+    
+}
+
+.btn-number{
+    color: var(--clr-light-gray);
+    margin-right: 20px;
+}
+
+.clr-light-gray{
+    color: var(--clr-light-gray);
+}
+
+/* Main Styling */
+
+/* Navigation */
+
+header{
+    border-bottom: var(--clr-dark-gray) 1px solid;
+}
+.nav-list-mob{
+    display: none;
+    list-style: none;
+    li{     
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+.mercury::marker{
+    color: var(--clr-mercury);
+    font-size: 70px;
+}
+
+.venus::marker{
+    color: var(--clr-venus);
+    font-size: 70px;
+}
+
+.earth::marker{
+    color: var(--clr-earth);
+    font-size: 70px;
+}
+
+.mars::marker{
+    color: var(--clr-mars);
+    font-size: 70px;
+}
+
+.jupiter::marker{
+    color: var(--clr-jupiter);
+    font-size: 70px;
+}
+
+.saturn::marker{
+    color: var(--clr-saturn);
+    font-size: 70px;
+}
+
+.uranus::marker{
+    color: var(--clr-uranus);
+    font-size: 70px;
+}
+
+.neptune::marker{
+    color: var(--clr-neptune);
+    font-size: 70px;
+}
+
+.nav-list-desk{
+    display: none;
+}
+
+/* Data-select section */
+
+.data-select{
+    border-bottom: var(--clr-dark-gray) 1px solid;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.overview-select{
+    border-bottom: var(--clr-mercury) 5px solid;
+}
+
+/* Main Section */
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0rem 2rem;
+}
+
+.main-img{
+    padding: 6rem;
+}
+
+.main-select{
+    display: none;
+}
+
+.internal{
+    display: none;
+}
+
+.geology{
+    display: none;
+}
+
+a{
+    text-decoration: underline;
+    color: var(--clr-light-gray);
+    font-weight: var(--fw-bold);
+    img{
+        display: inline;
+    }
+}
+
+/* data section */
+
+.data-section{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.data{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: var(--clr-dark-gray) 1px solid;
+    padding: 0.5rem 1.5rem;
+    h2{
+        font-size: 20px;
+    }
+}
+
